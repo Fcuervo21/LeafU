@@ -1,5 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import BottomNavigation from './navigation/BottomNavigation/BottomNavigation';
+import Home from './screens/Home/Home';
+import Calculator from './screens/Calculator/Calculator';
+import Community from './screens/Community/Community';
+import News from './screens/News/News';
+import Learn from './screens/Learn/Learn';
 
 const App = () => {
 	return (
@@ -12,11 +18,11 @@ const App = () => {
 					<Route exact path ='/News' component={News}/>
 					<Route exact path ='/Community' component={Community}/>
 					<Route exact path ='/Learn' component={Learn}/>
-					<Route exact path ='/Settings' component={Settings}/>
+					{/* <Route exact path ='/Settings' component={Settings}/> */}
 				</Switch>
 			</div>
 		</BrowserRouter>
 	);
 };
 
-export default App
+export default App;
