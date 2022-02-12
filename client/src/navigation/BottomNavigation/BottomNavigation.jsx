@@ -61,7 +61,7 @@ const BottomNavigation = (props) => {
                         <BottomNavigationAction key={text} label={text} value={value} icon={icon} onClick={() => history.push(path)} />
                     )
                 })}
-                <BottomNavigationAction key={<Typography color="primary">Mode</Typography>} label={<Typography color="primary">{theme.palette.mode === "dark" ? "Light" : "Dark"} mode</Typography>} icon={<Brightness7 color="primary" />} onClick={colorMode.toggleColorMode} />
+                {/* <BottomNavigationAction key={<Typography color="primary">Mode</Typography>} label={<Typography color="primary">{theme.palette.mode === "dark" ? "Light" : "Dark"} mode</Typography>} icon={<Brightness7 color="primary" />} onClick={colorMode.toggleColorMode} /> */}
             </BottomNavbar>
         </Paper>
     );

@@ -8,7 +8,6 @@ import News from "./screens/News/News";
 import Learn from "./screens/Learn/Learn";
 
 import { ColorModeContext } from "./assets/toggleColorMode";
-
 import { useTheme } from '@mui/material/styles';
 
 const App = () => {
