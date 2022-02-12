@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import CalculatorStepper from './components/CalculatorStepper';
+import useStyles from './components/styles';
+
 
 const Calculator = () => {
-  return (
-    <div>Calculator</div>
-  )
-}
+    const classes = useStyles();
+
+    return (
+        <div className={classes.mainContainer}>
+            <CalculatorStepper />
+
+        </div>
+
+    );
+};
 
 export default Calculator;
