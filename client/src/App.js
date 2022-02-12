@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import BottomNavigation from "./navigation/BottomNavigation/BottomNavigation";
 import Home from "./screens/Home/Home";
@@ -7,7 +7,13 @@ import Community from "./screens/Community/Community";
 import News from "./screens/News/News";
 import Learn from "./screens/Learn/Learn";
 
+import { ColorModeContext } from "./assets/toggleColorMode";
+
+import { useTheme } from '@mui/material/styles';
+
 const App = () => {
+	const theme = useTheme();
+	const colorMode = useContext(ColorModeContext);
 	return (
 		<BrowserRouter>
 			<div>
