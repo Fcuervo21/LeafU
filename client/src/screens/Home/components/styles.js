@@ -6,7 +6,4 @@ export default makeStyles(() => ({
 		padding: "2%",
 		height: "100vh",
 	},
-	contentContainer: {
-		marginTop: "80px",
-	},
 }));

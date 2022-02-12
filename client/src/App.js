@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import TopTittle from "./navigation/TopTittle/TopTittle";
 import BottomNavigation from "./navigation/BottomNavigation/BottomNavigation";
 import Home from "./screens/Home/Home";
 import Calculator from "./screens/Calculator/Calculator";
@@ -8,7 +9,7 @@ import News from "./screens/News/News";
 import Learn from "./screens/Learn/Learn";
 
 import { ColorModeContext } from "./assets/toggleColorMode";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 
 const App = () => {
 	const theme = useTheme();
@@ -16,6 +17,7 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<div>
+				<TopTittle />
 				<BottomNavigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
