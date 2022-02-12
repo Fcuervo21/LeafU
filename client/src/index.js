@@ -3,18 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './assets/theme';
-
-import App from './App';
+import {ToggleColorMode as App} from './assets/toggleColorMode';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
 			<App />
-		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

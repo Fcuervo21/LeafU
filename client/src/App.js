@@ -7,17 +7,23 @@ import Community from './screens/Community/Community';
 import News from './screens/News/News';
 import Learn from './screens/Learn/Learn';
 
-const App = () => {
+import { ColorModeContext } from "./assets/toggleColorMode";
+
+import { useTheme } from '@mui/material/styles';
+
+export const App = () => {
+	const theme = useTheme();
+	const colorMode = React.useContext(ColorModeContext);
 	return (
 		<BrowserRouter>
 			<div>
 				<BottomNavigation />
 				<Switch>
-					<Route exact path ='/' component={Home}/>
-					<Route exact path ='/Calculator' component={Calculator}/>
-					<Route exact path ='/News' component={News}/>
-					<Route exact path ='/Community' component={Community}/>
-					<Route exact path ='/Learn' component={Learn}/>
+					<Route exact path='/' component={Home} />
+					<Route exact path='/Calculator' component={Calculator} />
+					<Route exact path='/News' component={News} />
+					<Route exact path='/Community' component={Community} />
+					<Route exact path='/Learn' component={Learn} />
 					{/* <Route exact path ='/Settings' component={Settings}/> */}
 				</Switch>
 			</div>
@@ -25,4 +31,3 @@ const App = () => {
 	);
 };
 
-export default App;
