@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
+
+//Import actions
+import { getNews } from '../../actions/news';
+
 import useStyles from "./components/newsCard/styles";
 import NewsCard from "./components/newsCard/NewsCard";
 
 const News = () => {
 	const classes = useStyles();
+    
+    const dispatch = useDispatch();
+    const news = useSelector((state) => state.news);
+
+    console.log(news);
+
+    useEffect(() => {
+        dispatch(getNews());
+    }, [dispatch]);
+
 	return (
-		<div className={classes.mainContainer}>
-			<NewsCard
-				image=""
-				title="Lorem ipsum dolor sit amet"
-				content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend, erat vitae aliquet tincidunt, turpis libero tempor dolor, nec accumsan quam lectus eget magna."
-			/>
-			<NewsCard
-				image=""
-				title="Lorem ipsum dolor sit amet"
-				content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend, erat vitae aliquet tincidunt, turpis libero tempor dolor, nec accumsan quam lectus eget magna."
-			/>
-			<NewsCard
-				image=""
-				title="Lorem ipsum dolor sit amet"
-				content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend, erat vitae aliquet tincidunt, turpis libero tempor dolor, nec accumsan quam lectus eget magna."
-			/>
-		</div>
+		<div>Hello</div>
+            // !news.length ? <CircularProgress /> : (
+                
+            //     </div>
+            // )
+		
 	);
 };
 

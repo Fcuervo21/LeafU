@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux';
 import useStyles from "./styles";
 import {
 	Card,
@@ -12,6 +13,8 @@ import {
 
 const NewsCard = (props) => {
 	const classes = useStyles();
+    
+
 	return (
 		<div className={classes.cardContainer}>
 			<Card>
