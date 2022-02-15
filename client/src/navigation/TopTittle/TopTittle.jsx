@@ -9,7 +9,7 @@ export const TopTittle = (props) => {
 	const classes = useStyles();
 	return (
 		<>
-			<AppBar position="static" color="primary">
+			<AppBar position="sticky" color="primary">
 				<Toolbar className={classes.toolContainer}>
 					<IconButton onClick={() => history.push("/")}>
 						<Avatar alt="Logo" src={Logo} />
