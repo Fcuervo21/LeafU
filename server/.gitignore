@@ -8,9 +8,11 @@
 # testing
 /coverage
 
+
 # production
 /build
 .env
+firebase.json
 # misc
 .DS_Store
 .env.local
