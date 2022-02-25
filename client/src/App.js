@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import TopTittle from "./navigation/TopTittle/TopTittle";
 import BottomNavigation from "./navigation/BottomNavigation/BottomNavigation";
 import Home from "./screens/Home/Home";
@@ -8,13 +8,13 @@ import Calculator from "./screens/Calculator/Calculator";
 import Community from "./screens/Community/Community";
 import News from "./screens/News/News";
 import Learn from "./screens/Learn/Learn";
+import LogIn from "./screens/LogIn/LogIn";
 
 import { ColorModeContext } from "./assets/toggleColorMode";
 import { useTheme } from "@mui/material/styles";
 
 const App = () => {
 	const theme = useTheme();
-
 
 	const colorMode = useContext(ColorModeContext);
 	return (
@@ -24,6 +24,7 @@ const App = () => {
 				<BottomNavigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route exact path="/LogIn" component={LogIn} />
 					<Route exact path="/Calculator" component={Calculator} />
 					<Route exact path="/news" component={News} />
 					<Route exact path="/Community" component={Community} />
