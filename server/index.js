@@ -2,12 +2,20 @@ import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+
+import { initializeApp, applicationDefault } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
+
+
 dotenv.config()
 
 import newsRoutes from './routes/news.js';
 
+
 const app = express();
 
+//database
+// import { db } from './database/firebase.js';
 
 
 //General Setup
@@ -21,6 +29,22 @@ app.use('/news', newsRoutes);
 //Settings
 const PORT = process.env.PORT || 5000;
 
+//TEST--------------------------------------------
+const firebaseApp = initializeApp({
+    credential: applicationDefault(),
+});
+
+const db = getFirestore(firebaseApp);
+
+
+app.get('/test', async (req, res) => {
+    console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS)
+    const querySnapshot = await db.collection('userData').get();
+
+    console.log(querySnapshot.docs[0].data());
+    res.send('Hello');
+});
+//TEST--------------------------------------------
 
 //Start Server
 app.listen(PORT, () => {
