@@ -1,4 +1,5 @@
 node_modules
 build
 .env
-firebase.json
+server/firebase.json
+server/node_modules
