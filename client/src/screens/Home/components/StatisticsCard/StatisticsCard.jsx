@@ -1,6 +1,6 @@
 import React, { setState } from "react";
 import { Avatar, Button, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
-import { ShareIcon, MoreVert } from '@mui/icons-material/Share';
+import { ShareIcon } from '@mui/icons-material/Share';
 import useStyles from "../styles";
 import HomeCard from "../HomeCard/HomeCard";
 import { Map } from "@mui/icons-material";
@@ -22,7 +22,6 @@ export const StatisticsCard = (props) => {
                 subheader={source.location}
                 action={
                     <IconButton aria-label="settings">
-                        <MoreVert />
                     </IconButton>
                 }
             />

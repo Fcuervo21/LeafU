@@ -1,24 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import useStyles from "./components/styles";
-import { Divider, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import HomeCard from "./components/HomeCard/HomeCard";
 import WorldCard from "./components/WorldCard/WorldCard";
 import { useTheme } from "@emotion/react";
+import StatisticsCard from "./components/StatisticsCard/StatisticsCard";
 
 const Home = () => {
 	const classes = useStyles();
 	const theme = useTheme();
-	/* const newsCardsData;
-	const statisticsCardsData;
-	const communityCardsData; */
+	const [stats, setStats] = useState();
 	return (
 		<>
 			<div className={classes.mainContainer}>
-				<HomeCard>
-					<Typography variant="h4" color="primary">My World</Typography>
-					<Divider  color="primary" />
-					<WorldCard />
-				</HomeCard>
+				<WorldCard />
+				<Grid>
+				</Grid>
 
 			</div>
 		</>
