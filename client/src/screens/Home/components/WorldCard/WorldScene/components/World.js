@@ -6,7 +6,6 @@ const World = ({ width, height }) => {
             <perspectiveCamera args={[75, width / height, 0.1, 1000]} />
             <sphereGeometry />
             <meshPhongMaterial color="#0x37BE95" clipShadows />
-            
         </mesh>
     )
 }

@@ -13,8 +13,8 @@ const WorldCard = () => {
             <Divider color="primary" />
             <WorldScene>
                 <World width={16} height={9} />
-                <ambientLight />
                 <Particles />
+                <ambientLight />
                 <pointLight color="#00ffff" position={[100, 0, 100]} intensity={1.2} />
                 <pointLight color="#00ffff" position={[-50, 0, -50]} intensity={0.2} />
                 <OrbitControls autoRotate />

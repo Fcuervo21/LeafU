@@ -15,6 +15,7 @@ const Home = () => {
 			<div className={classes.mainContainer}>
 				<WorldCard />
 				<Grid>
+					
 				</Grid>
 
 			</div>
