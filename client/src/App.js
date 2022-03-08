@@ -24,11 +24,11 @@ const App = () => {
 				<BottomNavigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/LogIn" component={LogIn} />
-					<Route exact path="/Calculator" component={Calculator} />
+					<Route exact path="/logIn" component={LogIn} />
+					<Route exact path="/calculator" component={Calculator} />
 					<Route exact path="/news" component={News} />
-					<Route exact path="/Community" component={Community} />
-					<Route exact path="/Learn" component={Learn} />
+					<Route exact path="/community" component={Community} />
+					<Route exact path="/learn" component={Learn} />
 					{/* <Route exact path ='/Settings' component={Settings}/> */}
 				</Switch>
 			</div>

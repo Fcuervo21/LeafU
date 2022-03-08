@@ -1,11 +1,11 @@
-// import dotenv from 'dotenv';
-// import { initializeApp } from 'firebase-admin/app';
-// import { getFirestore, collection, getDocs } from 'firebase/firestore';
-// dotenv.config();
+import dotenv from 'dotenv';
+import { initializeApp, applicationDefault } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
-// initializeApp({
-//     credential: applicationDefault(),
-// });
+dotenv.config();
 
-// export const db = getFirestore();
-
+//TEST--------------------------------------------
+const firebaseApp = initializeApp({
+    credential: applicationDefault(),
+});
+export const db = getFirestore(firebaseApp);

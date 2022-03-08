@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Container, Divider, TextField, Alert } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Container, Divider, TextField } from '@mui/material';
+import { useDispatch } from 'react-redux';
+
+import { createCalculatorPost } from '../../../actions/calculator';
 import useStyles from './styles';
 
 const CalculatorStepper = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [activeStep, setActiveStep] = useState(0);
 
     const handleNext = () => {
@@ -15,52 +19,33 @@ const CalculatorStepper = () => {
     };
 
 
-    const [inputs, setInputs] = useState({ 'energy': '', 'water': '', 'gas': '' });
-    const [inputsErrors, setInputsErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+    const [postMeasures, setPostMeasures] = useState({ 'energy': '', 'water': '', 'gas': '' });
 
 
 
     const steps = [
         {
             label: 'How much do you pay per month in energy? 💡',
-            input: <TextField name='energy' value={inputs.energy} onChange={(e) => setInputs({ ...inputs, energy: e.target.value })} id="outlined-basic" label="Energy" variant="outlined" />,
+            input: <TextField name='energy' value={postMeasures.energy} onChange={(e) => setPostMeasures({ ...postMeasures, energy: e.target.value })} id="outlined-basic" label="Energy" variant="outlined" />,
         },
         {
             label: 'How much do you pay per month in water? 💧',
-            input: <TextField name='water' value={inputs.water} onChange={(e) => setInputs({ ...inputs, water: e.target.value })} id="outlined-basic" label="Water" variant="outlined" />,
+            input: <TextField name='water' value={postMeasures.water} onChange={(e) => setPostMeasures({ ...postMeasures, water: e.target.value })} id="outlined-basic" label="Water" variant="outlined" />,
         },
         {
-            label: 'How much do you pay per month in gas? 💧',
-            input: <TextField name='gas' value={inputs.gas} onChange={(e) => setInputs({ ...inputs, gas: e.target.value })} id="outlined-basic" label="Gas" variant="outlined" />,
+            label: 'How much do you pay per month in gas? ⛽',
+            input: <TextField name='gas' value={postMeasures.gas} onChange={(e) => setPostMeasures({ ...postMeasures, gas: e.target.value })} id="outlined-basic" label="Gas" variant="outlined" />,
         },
     ];
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setInputsErrors(validate(inputs));
-        setIsSubmit(true);
-        // console.log(console.log(inputs));
+        console.log(postMeasures);
+        dispatch(createCalculatorPost(postMeasures));
     };
 
-    const validate = (values) => {
-        let errors = '';
-        const regex = /^[0-9]*(\.[0-9]{0,2})?$/;
-        if (!values.energy || !values.water || !values.gas) {
-            errors = "Quantity is required!"
-        } else if (!regex.test(values.energy) && !regex.test(values.water) && !regex.test(values.gas)) {
-            errors = "You should place numerical values";
-        }
-        return errors;
-    };
 
-    useEffect(() => {
-        console.log(inputsErrors);
-        if (Object.keys(inputsErrors).length === 0 && isSubmit) {
-            console.log(inputs);
-        }
 
-    }, [inputsErrors]);
 
 
     return (

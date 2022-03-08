@@ -1,7 +1,7 @@
-import express, { Router } from "express";
+import express from "express";
 import { getNews } from "../controllers/news.js";
 
-const router = Router();
+const router = express.Router();
 
 //We added the prefix of users
 
