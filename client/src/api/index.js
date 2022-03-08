@@ -1,5 +1,10 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/news';
+const API = axios.create({ baseURL: 'http://localhost:5000' });
+// const url = 'http://localhost:5000/news';
 
-export const fetchNews = () => axios.get(url);
+export const fetchNews = () => API.get('/news');
+
+//Calculator
+export const getCalculator = () => API.get('/calculator');
+export const createCalculatorPost = (newCalculatorEntry) => API.post('/calculator', newCalculatorEntry);
