@@ -5,6 +5,8 @@ import { Divider, Typography } from "@mui/material";
 import { HomeCard } from './../HomeCard/HomeCard';
 
 const WorldCard = ({ title, status }) => {
+    const classes = useStyles();
+
     return (
         <HomeCard title="My World" variant="big">
             <WorldScene status={status} />
