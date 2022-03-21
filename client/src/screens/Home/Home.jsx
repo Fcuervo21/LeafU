@@ -33,103 +33,195 @@ const Home = () => {
 
 	const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-	// WATER DATA
-	const waterDataset = {
-		type: 'line',
-		label: 'Water',
-		borderColor: '#1F64F1',
-		borderWidth: 2,
-		fill: true,
-		data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+	const data = {
+		water:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		gas:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		electricity:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		energy:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
 	}
-	
-	const waterMeanDataset = (type) => {
+
+	const colors = {
+		water: "#1F64F1",
+		waterMean: "#093388",
+		gas: "#E9664F",
+		gasMean: "#821C0A",
+		electricity: "#E1E334",
+		electricityMean: "#90910B",
+		energy: "#45E334",
+		energyMean: "#18820C",
+	}
+
+	// WATER DATA
+	const waterDataset = (type, color) => {
 		return (
 			{
-				type: {type},
-				label: 'Water Mean',
-				borderColor: '#1F64F1',
+				type: type,
+				label: 'Water',
+				borderColor: color,
 				borderWidth: 2,
-				fill: true,
-				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+				data:data.water,
 			}
 		)
-	} 
+	}
+
+	const waterMeanDataset = (type, color) => {
+		return (
+			{
+				type: type,
+				label: 'Water Mean',
+				borderColor: color,
+				borderWidth: 2,
+				data: data.gas,
+			}
+		)
+	}
 
 	const waterData = {
 		labels,
 		datasets: [
-			waterDataset
+			waterDataset("doughnut", colors.water)
 		],
 	};
 
 	// GAS DATA
-	const gasDataset = {
-		type: 'line',
-		label: 'Gas',
-		borderColor: '#F15C1F',
-		borderWidth: 2,
-		fill: false,
-		data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+	const gasDataset = (color) => {
+		return (
+			{
+				label: 'Gas',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: data.electricity,
+			}
+		)
+	}
+
+	const gasMeanDataset = (color) => {
+		return (
+			{
+				label: 'Gas Mean',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: data.energy,
+			}
+		)
 	}
 
 	const gasData = {
 		labels,
 		datasets: [
-			gasDataset
+			gasDataset(colors.gas)
 		],
 	};
 
 	// ELECTRICITY DATA
-	const electricityDataset = {
-		type: 'line',
-		label: 'Electricity',
-		borderColor: '#1FF15A',
-		borderWidth: 2,
-		fill: false,
-		data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+	const electricityDataset = (type, color) => {
+		return (
+			{
+				type: type,
+				label: 'Electricity',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+			}
+		)
+	}
+
+	const electricityMeanDataset = (type, color) => {
+		return (
+			{
+				type: type,
+				label: 'Electricity Mean',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+			}
+		)
 	}
 
 	const electricityData = {
 		labels,
 		datasets: [
-			electricityDataset
+			electricityDataset("line", colors.electricity)
 		],
 	};
 
 	// ENERGY DATA
-	const energyDataset = {
-		type: 'line',
-		label: 'Energy',
-		borderColor: '#F1E41F',
-		borderWidth: 2,
-		fill: false,
-		data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+	const energyDataset = (type, color) => {
+		return (
+			{
+				type: type,
+				label: 'Energy',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+			}
+		)
+	}
+
+	const energyMeanDataset = (type, color) => {
+		return (
+			{
+				type: type,
+				label: 'Energy Mean',
+				borderColor: color,
+				borderWidth: 2,
+				fill: true,
+				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+			}
+		)
 	}
 
 	const energyData = {
 		labels,
 		datasets: [
-			energyDataset
+			energyDataset("line", colors.energy)
 		],
 	};
-
 	// WEEKLY REPORTS DATA
 	const weeklyReportsData = {
 		labels,
 		datasets: [
-			waterDataset,
-			gasDataset,
-			electricityDataset,
-			energyDataset
+			waterDataset("line", colors.water),
+			gasDataset(colors.gas),
+			electricityDataset("line", colors.electricity),
+			energyDataset("line", colors.energy)
 		],
 	};
 
 	const waterMeanComparassionData = {
 		labels,
 		datasets: [
-			waterDataset,
-			waterMeanDataset
+			waterDataset("bar", colors.water),
+			waterMeanDataset("bar", colors.waterMean)
+		],
+	}
+
+	const gasMeanComparassionData = {
+		labels,
+		datasets: [
+			gasDataset(colors.gas),
+			gasMeanDataset("bar", colors.gasMean)
+		],
+	}
+
+	const electricityMeanComparassionData = {
+		labels,
+		datasets: [
+			electricityDataset("bar", colors.electricity),
+			electricityMeanDataset("bar", colors.electricityMean)
+		],
+	}
+
+	const energyMeanComparassionData = {
+		labels,
+		datasets: [
+			energyDataset("bar", colors.energy),
+			energyMeanDataset("bar", colors.energyMean)
 		],
 	}
 
@@ -146,7 +238,7 @@ const Home = () => {
 					<StatisticsCard title="Water Expenses" chartData={waterData} />
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Gas Expenses" chartData={gasData} />
+					<StatisticsCard title="Gas Expenses" cha chartData={gasData} />
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
 					<StatisticsCard title="Electricity Expenses" chartData={electricityData} />
@@ -158,13 +250,13 @@ const Home = () => {
 					<StatisticsCard title="Water Mean Comparassion" chartData={waterMeanComparassionData} />
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Gas Mean Comparassion" chartData={gasData} />
+					<StatisticsCard title="Gas Mean Comparassion" chartData={gasMeanComparassionData} />
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Electricity Mean Comparassion" chartData={electricityData} />
+					<StatisticsCard title="Electricity Mean Comparassion" chartData={electricityMeanComparassionData} />
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Energy Mean Comparassion" chartData={energyData} />
+					<StatisticsCard title="Energy Mean Comparassion" chartData={energyMeanComparassionData} />
 				</Grid>
 			</Grid>
 		</Paper>
