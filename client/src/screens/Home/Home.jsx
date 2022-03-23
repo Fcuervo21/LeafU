@@ -34,10 +34,14 @@ const Home = () => {
 	const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 	const data = {
-		water:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-		gas:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-		electricity:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-		energy:  labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		water: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		waterMean: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		gas: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		gasMean: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		electricity: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		electricityMean: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		energy: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+		energyMean: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
 	}
 
 	const colors = {
@@ -59,7 +63,7 @@ const Home = () => {
 				label: 'Water',
 				borderColor: color,
 				borderWidth: 2,
-				data:data.water,
+				data: data.water,
 			}
 		)
 	}
@@ -71,7 +75,7 @@ const Home = () => {
 				label: 'Water Mean',
 				borderColor: color,
 				borderWidth: 2,
-				data: data.gas,
+				data: data.waterMean,
 			}
 		)
 	}
@@ -79,31 +83,31 @@ const Home = () => {
 	const waterData = {
 		labels,
 		datasets: [
-			waterDataset("doughnut", colors.water)
+			waterDataset("line", colors.water)
 		],
 	};
 
 	// GAS DATA
-	const gasDataset = (color) => {
+	const gasDataset = (type, color) => {
 		return (
 			{
+				type: type,
 				label: 'Gas',
 				borderColor: color,
 				borderWidth: 2,
-				fill: true,
-				data: data.electricity,
+				data: data.gas,
 			}
 		)
 	}
 
-	const gasMeanDataset = (color) => {
+	const gasMeanDataset = (type, color) => {
 		return (
 			{
+				type: type,
 				label: 'Gas Mean',
 				borderColor: color,
 				borderWidth: 2,
-				fill: true,
-				data: data.energy,
+				data: data.gasMean,
 			}
 		)
 	}
@@ -111,7 +115,7 @@ const Home = () => {
 	const gasData = {
 		labels,
 		datasets: [
-			gasDataset(colors.gas)
+			gasDataset("line", colors.gas)
 		],
 	};
 
@@ -124,7 +128,7 @@ const Home = () => {
 				borderColor: color,
 				borderWidth: 2,
 				fill: true,
-				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+				data: data.electricity,
 			}
 		)
 	}
@@ -137,7 +141,7 @@ const Home = () => {
 				borderColor: color,
 				borderWidth: 2,
 				fill: true,
-				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+				data: data.electricityMean,
 			}
 		)
 	}
@@ -157,8 +161,7 @@ const Home = () => {
 				label: 'Energy',
 				borderColor: color,
 				borderWidth: 2,
-				fill: true,
-				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+				data: data.energy,
 			}
 		)
 	}
@@ -170,8 +173,7 @@ const Home = () => {
 				label: 'Energy Mean',
 				borderColor: color,
 				borderWidth: 2,
-				fill: true,
-				data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+				data: data.energyMean,
 			}
 		)
 	}
@@ -187,7 +189,7 @@ const Home = () => {
 		labels,
 		datasets: [
 			waterDataset("line", colors.water),
-			gasDataset(colors.gas),
+			gasDataset("line", colors.gas),
 			electricityDataset("line", colors.electricity),
 			energyDataset("line", colors.energy)
 		],
@@ -204,7 +206,7 @@ const Home = () => {
 	const gasMeanComparassionData = {
 		labels,
 		datasets: [
-			gasDataset(colors.gas),
+			gasDataset("bar", colors.gas),
 			gasMeanDataset("bar", colors.gasMean)
 		],
 	}
@@ -228,38 +230,42 @@ const Home = () => {
 	return (
 		<Paper className={classes.mainContainer}>
 			<Grid container spacing={3}>
-				<Grid className={classes.worldCard} item xs={12} md={12} lg={4}>
-					<WorldCard />
+				<Grid item container spacing={3} xs={12} md={12} lg={5}>
+					<Grid className={classes.worldCard} item xs={12} >
+						<WorldCard />
+					</Grid>
 				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Weekly Reports" chartData={weeklyReportsData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Water Expenses" chartData={waterData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Gas Expenses" cha chartData={gasData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Electricity Expenses" chartData={electricityData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Energy Expenses" chartData={energyData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Water Mean Comparassion" chartData={waterMeanComparassionData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Gas Mean Comparassion" chartData={gasMeanComparassionData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Electricity Mean Comparassion" chartData={electricityMeanComparassionData} />
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<StatisticsCard title="Energy Mean Comparassion" chartData={energyMeanComparassionData} />
+				<Grid item container spacing={3} xs={12} md={12} lg={7}>
+					<Grid item xs={12} md={12} lg={12}>
+						<StatisticsCard variant="thick" title="Weekly Reports" chartData={weeklyReportsData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Water Expenses" chartData={waterData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Gas Expenses" cha chartData={gasData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Electricity Expenses" chartData={electricityData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Energy Expenses" chartData={energyData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Water Mean Comparassion" chartData={waterMeanComparassionData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Gas Mean Comparassion" chartData={gasMeanComparassionData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Electricity Mean Comparassion" chartData={electricityMeanComparassionData} />
+					</Grid>
+					<Grid item xs={12} md={6} lg={6}>
+						<StatisticsCard variant="small" title="Energy Mean Comparassion" chartData={energyMeanComparassionData} />
+					</Grid>
 				</Grid>
 			</Grid>
-		</Paper>
+		</Paper >
 	);
 };
 

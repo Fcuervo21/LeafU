@@ -11,7 +11,7 @@ export const HomeCard = ({ title, variant, children }) => {
 
     return (
         <Paper elevation={1} className={`${variant === "big" ? classes.big : variant === "thick" ? classes.thick : classes.small} ${classes.card}`}>
-            <Typography variant={variant === "big" ? "h4" : "h6"} color="primary">{title}</Typography>
+            <Typography variant={variant === "small" ? "h6" : "h4"} color="primary">{title}</Typography>
             <Divider color="primary" />
             {children}
         </Paper>

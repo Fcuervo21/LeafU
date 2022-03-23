@@ -1,5 +1,4 @@
 import React, { setState } from "react";
-import { Avatar, Button, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
 import { ShareIcon } from '@mui/icons-material/Share';
 import useStyles from "./styles";
 import HomeCard from "../HomeCard/HomeCard";

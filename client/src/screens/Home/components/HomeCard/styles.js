@@ -3,19 +3,20 @@ import { makeStyles } from "@mui/styles";
 export default makeStyles(() => ({
     card: {
         padding: "2%",
-        borderRadius: "10px !important"
+        borderRadius: "10px !important",
+        textAlign: "center",
     },
-    big: { 
+    big: {
         height: "100%",
         minHeight: "",
         maxHeight: "100vh"
     },
     thick: {
-        height: "33vw",
-        maxHeight: "50vh"
+        height: "auto",
+        maxHeight: "60vh"
     },
     small: {
         height: "auto",
-        maxHeight: "50vh"
+        maxHeight: "60vh"
     },
 }));
