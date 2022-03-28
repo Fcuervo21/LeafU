@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
         borderRadius: "10px !important",
         backgroundColor: `${theme.palette.primary.light}  !important`,
         textAlign: "center",
-        
 
     },
     image: {
