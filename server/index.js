@@ -7,6 +7,7 @@ dotenv.config()
 
 import newsRoutes from './routes/news.js';
 import calculatorRoutes from './routes/calculator.js';
+import userRoutes from './routes/users.js';
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors());
 //Cada ruta dentro de userRoutes va a comenzar con /users
 app.use('/news', newsRoutes);
 app.use('/calculator', calculatorRoutes);
+app.use('/user', userRoutes); 
 
 //Settings
 const PORT = process.env.PORT || 5000;
