@@ -4,9 +4,10 @@ export default makeStyles(() => ({
     body: {
         margin: 0
     },
-    world: {
+    worldCard: {
         overflow: 'hidden',
         width: '100%',
-        background: '#fff'
+        height: '100%',
+        background: '#ff0000'
     }
 }));
