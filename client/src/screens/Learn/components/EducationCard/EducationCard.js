@@ -12,8 +12,8 @@ export const EducationCard = ({ title, subtitle1, subtitle2, subtitle3, info1, i
     return (
         <Paper elevation={1} className={classes.card}>
             <Grid container>
-                <Grid item container xs={3}>
-                    <Grid item xs={12}>
+                <Grid item container xs={4} justifyContent="center" alignItems="center">
+                    <Grid item xs={12} >
                         <Box
                             className={classes.image}
                             component="img"
@@ -22,19 +22,19 @@ export const EducationCard = ({ title, subtitle1, subtitle2, subtitle3, info1, i
                         />
                     </Grid>
                 </Grid>
-                <Grid item container xs={9}>
+                <Grid item container xs={8}>
                     <Grid item xs={12}>
                         <Typography variant="h4" color="white">{title}</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} md={4}>
                         <Typography variant="h5" color="white">{subtitle1}</Typography>
                         <Typography variant="h6" color="white">{info1}</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={6} md={4}>
                         <Typography variant="h5" color="white">{subtitle2}</Typography>
                         <Typography variant="h6" color="white">{info2}</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={6} md={4}>
                         <Typography variant="h5" color="white">{subtitle3}</Typography>
                         <Typography variant="h6" color="white">{info3}</Typography>
                     </Grid>

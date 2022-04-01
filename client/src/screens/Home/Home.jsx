@@ -190,7 +190,7 @@ const Home = () => {
 		datasets: [
 			waterDataset("line", colors.water),
 			gasDataset("line", colors.gas),
-			electricityDataset("line", colors.electricity),
+			/* electricityDataset("line", colors.electricity), */
 			energyDataset("line", colors.energy)
 		],
 	};
@@ -245,9 +245,9 @@ const Home = () => {
 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Gas Expenses" cha chartData={gasData} />
 					</Grid>
-					<Grid item xs={12} md={6} lg={6}>
+{/* 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Electricity Expenses" chartData={electricityData} />
-					</Grid>
+					</Grid> */}
 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Energy Expenses" chartData={energyData} />
 					</Grid>
@@ -257,9 +257,9 @@ const Home = () => {
 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Gas Mean Comparassion" chartData={gasMeanComparassionData} />
 					</Grid>
-					<Grid item xs={12} md={6} lg={6}>
+{/* 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Electricity Mean Comparassion" chartData={electricityMeanComparassionData} />
-					</Grid>
+					</Grid> */}
 					<Grid item xs={12} md={6} lg={6}>
 						<StatisticsCard variant="small" title="Energy Mean Comparassion" chartData={energyMeanComparassionData} />
 					</Grid>

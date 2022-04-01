@@ -3,7 +3,7 @@ import { Divider, Grid, Paper, Typography } from '@mui/material'
 import useStyles from "./components/styles";
 import { useTheme } from "@emotion/react";
 import EducationCard from './components/EducationCard/EducationCard';
-import leafuImg from "C:/Users/veljo/Documents/UDLAP/OEs/GDSC/Solution Challenge/LeafUApp/LeafU/client/src/assets/images/LogoMiniWhite.png"
+import leafuImg from "../../assets/images/LogoMiniWhite.png"
 
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
@@ -20,7 +20,7 @@ const Learn = () => {
   return (
     <>
       <div className={classes.mainContainer}>
-        <Typography variant='h3' sx={{ textAlign: 'center' }} >Get involved. Save the world!🌎</Typography>
+        <Typography variant='h4' sx={{ textAlign: 'center' }} >Get involved. Save the world!🌎</Typography>
         <Divider sx={{ mb: 3 }} />
         <Grid container spacing={3}>
           <Grid item xs={12} className={classes.swiperGrid}>
