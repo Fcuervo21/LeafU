@@ -9,8 +9,7 @@ const router = express.Router();
 
 export const getNews = async (req, res) => {
     try {
-        const data = await fetch(process.env.URLAPI)
-        .then(response => response.json())
+        const data = await fetch(process.env.URLAPI).then(response => response.json())
         // return res.status(200).json(data); 
         res.status(200).json(data.articles);
     } catch (error) {
