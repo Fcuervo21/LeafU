@@ -5,7 +5,7 @@ import useStyles from "./styles";
 import { Map } from "@mui/icons-material";
 import { useTheme } from '@emotion/react';
 
-export const EducationCard = ({ title, imgSrc }) => {
+export const EducationCard = ({ title, subtitle1, subtitle2, subtitle3, info1, info2, info3, imgSrc }) => {
     const theme = useTheme();
     const classes = useStyles();
 
@@ -27,16 +27,16 @@ export const EducationCard = ({ title, imgSrc }) => {
                         <Typography variant="h4" color="white">{title}</Typography>
                     </Grid>
                     <Grid item xs={4}>
-                        <Typography variant="h5" color="white">{title}</Typography>
-                        <Typography variant="h6" color="white">{title}</Typography>
+                        <Typography variant="h5" color="white">{subtitle1}</Typography>
+                        <Typography variant="h6" color="white">{info1}</Typography>
                     </Grid>
                     <Grid item xs={4}>
-                        <Typography variant="h5" color="white">{title}</Typography>
-                        <Typography variant="h6" color="white">{title}</Typography>
+                        <Typography variant="h5" color="white">{subtitle2}</Typography>
+                        <Typography variant="h6" color="white">{info2}</Typography>
                     </Grid>
                     <Grid item xs={4}>
-                        <Typography variant="h5" color="white">{title}</Typography>
-                        <Typography variant="h6" color="white">{title}</Typography>
+                        <Typography variant="h5" color="white">{subtitle3}</Typography>
+                        <Typography variant="h6" color="white">{info3}</Typography>
                     </Grid>
                 </Grid>
             </Grid>

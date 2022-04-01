@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
     card: {
         padding: "2vh",
         borderRadius: "10px !important",
-        backgroundColor: `${theme.palette.primary.light}  !important`,
+        backgroundColor: `${theme.palette.primary.dark}  !important`,
         textAlign: "center",
 
     },

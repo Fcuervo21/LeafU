@@ -1,8 +1,9 @@
 import React from 'react'
-import { Grid, Paper } from '@mui/material'
+import { Divider, Grid, Paper, Typography } from '@mui/material'
 import useStyles from "./components/styles";
 import { useTheme } from "@emotion/react";
 import EducationCard from './components/EducationCard/EducationCard';
+import leafuImg from "C:/Users/veljo/Documents/UDLAP/OEs/GDSC/Solution Challenge/LeafUApp/LeafU/client/src/assets/images/LogoMiniWhite.png"
 
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
@@ -19,6 +20,8 @@ const Learn = () => {
   return (
     <>
       <div className={classes.mainContainer}>
+        <Typography variant='h3' sx={{ textAlign: 'center' }} >Get involved. Save the world!🌎</Typography>
+        <Divider sx={{ mb: 3 }} />
         <Grid container spacing={3}>
           <Grid item xs={12} className={classes.swiperGrid}>
             <Swiper
@@ -40,33 +43,101 @@ const Learn = () => {
               <SwiperSlide className={classes.swiperSlide1}></SwiperSlide>
               <SwiperSlide className={classes.swiperSlide2}></SwiperSlide>
               <SwiperSlide className={classes.swiperSlide3}></SwiperSlide>
-              <SwiperSlide className={classes.swiperSlide4}></SwiperSlide>
             </Swiper>
           </Grid>
-          <Grid item xs={12} lg={6}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
+          <Grid item xs={12}>
+            <Divider sx={{ mb: 3 }} />
+            <Typography variant='h5' sx={{ textAlign: 'center' }} >What do you want to learn today?</Typography>
           </Grid>
           <Grid item xs={12} lg={6}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
-          </Grid>
-          <Grid item xs={12} lg={7}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/e/e3/Logo_vector.png" />
-          </Grid>
-          <Grid item xs={12} lg={5}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
-          </Grid>
-          <Grid item xs={12} lg={5}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
-          </Grid>
-          <Grid item xs={12} lg={7}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
           </Grid>
           <Grid item xs={12} lg={6}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
           </Grid>
           <Grid item xs={12} lg={6}>
-            <EducationCard title="Basics" imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" />
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
           </Grid>
+          <Grid item xs={12} lg={6}>
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <EducationCard
+              title="Basics"
+              subtitle1="Progress"
+              info1="56%"
+              subtitle2="Started"
+              info2="11/03/22"
+              subtitle3="Finished"
+              info3="--/--/--"
+              imgSrc={leafuImg} />
+          </Grid>
+
         </Grid>
       </div>
     </>
