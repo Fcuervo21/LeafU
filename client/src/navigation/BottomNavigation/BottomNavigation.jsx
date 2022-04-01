@@ -20,7 +20,7 @@ const BottomNavigation = (props) => {
 
     const menuItems = [
         {
-            text: <Typography color="primary">Community</Typography>,
+            text: <Typography color="primary">Comm</Typography>,
             icon: <Map color="primary" />,
             value: "community",
             path: '/Community'
@@ -38,13 +38,13 @@ const BottomNavigation = (props) => {
             path: '/'
         },
         {
-            text: <Typography color="primary">Calculator</Typography>,
+            text: <Typography color="primary">Calc</Typography>,
             icon: <Calculate color="primary" />,
             value: "calculator",
             path: '/Calculator'
         },
         {
-            text: <Typography color="primary">Learn</Typography>,
+            text: <Typography color="primary">Edu</Typography>,
             icon: <School color="primary" />,
             value: "learn",
             path: '/Learn'

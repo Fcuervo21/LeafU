@@ -51,7 +51,7 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 1"
               subtitle1="Progress"
               info1="56%"
               subtitle2="Started"
@@ -62,9 +62,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 2"
               subtitle1="Progress"
-              info1="56%"
+              info1="37%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -73,9 +73,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 3"
               subtitle1="Progress"
-              info1="56%"
+              info1="15%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -84,9 +84,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 4"
               subtitle1="Progress"
-              info1="56%"
+              info1="0%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -95,9 +95,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 5"
               subtitle1="Progress"
-              info1="56%"
+              info1="0%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -106,9 +106,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 6"
               subtitle1="Progress"
-              info1="56%"
+              info1="0%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -117,9 +117,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 7"
               subtitle1="Progress"
-              info1="56%"
+              info1="0%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
@@ -128,9 +128,9 @@ const Learn = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <EducationCard
-              title="Basics"
+              title="Course 8"
               subtitle1="Progress"
-              info1="56%"
+              info1="0%"
               subtitle2="Started"
               info2="11/03/22"
               subtitle3="Finished"
