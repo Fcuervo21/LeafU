@@ -1,2 +1,3 @@
 # LeafU
-Google Solutions Challenge 
+
+Project for Google Solutions Challenge 2022. 
